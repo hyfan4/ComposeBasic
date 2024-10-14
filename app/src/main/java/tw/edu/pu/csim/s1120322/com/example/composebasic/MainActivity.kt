@@ -69,47 +69,49 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 modifier = modifier.size(50.dp)
             )
         }
-            /*
+
+        /*
         Text(text=x.toString(),
             fontSize = 50.sp,
             modifier = modifier.clickable { x++ }
         )
 
          */
-            Text(text = x.value.toString(),
-                fontSize = 50.sp,
-                modifier = modifier.clickable { x.value++ }
+        Text(text = x.value.toString(),
+            fontSize = 50.sp,
+            modifier = modifier.clickable { x.value++ }
+        )
+
+        Row {
+            Text(
+                text = stringResource(R.string.author),
+                color = Color.Blue,
+                fontSize = 30.sp,
+                modifier = modifier,
+                fontFamily = FontFamily(Font(R.font.hand)),
+            )
+            Image(
+                painter = painterResource(id = R.drawable.bomei),
+                contentDescription = "博美照片",
+                alpha = 0.5f,
+                modifier = modifier.clip(CircleShape)
             )
 
-            Row {
-                Text(
-                    text = stringResource(R.string.author),
-                    color = Color.Blue,
-                    fontSize = 30.sp,
-                    modifier = modifier,
-                    fontFamily = FontFamily(Font(R.font.hand)),
-                )
-                Image(
-                    painter = painterResource(id = R.drawable.bomei),
-                    contentDescription = "博美照片",
-                    alpha = 0.5f,
-                    modifier = modifier.clip(CircleShape)
-                )
-
-            }
-            Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.dog),
-                    contentDescription = "小狗狗照片"
-                )
-            }
-
-
         }
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.dog),
+                contentDescription = "小狗狗照片"
+            )
+        }
+
+
     }
+}
+
 
 @Preview(showBackground = true)
 @Composable
